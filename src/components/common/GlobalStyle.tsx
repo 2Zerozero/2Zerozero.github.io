@@ -7,6 +7,19 @@ const defaultStyle = css`
     margin: 0;
     padding: 0;
   }
+
+  html,
+  body,
+  #___gatsby {
+    height: 100%;
+  }
+
+  a,
+  a:hover {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
 `
 
 const GlobalStyle: FunctionComponent = function () {
