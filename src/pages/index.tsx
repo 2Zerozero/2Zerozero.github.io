@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
-import ProfileImage from 'components/main/ProfileImage'
 import GlobalStyle from 'components/common/GlobalStyle'
 import Introduction from 'components/main/Introduction'
+import Footer from 'components/common/Footer'
 
 // CSS
 const Container = styled.div`
@@ -17,7 +17,7 @@ const IndexPage: FunctionComponent = function () {
     <Container>
       <GlobalStyle />
       <Introduction />
-      <Link to="/info">To Info</Link>
+      <Footer />
     </Container>
   )
 }
