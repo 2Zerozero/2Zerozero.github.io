@@ -21,7 +21,7 @@ const TextStyle = css`
   color: gray;
 `
 
-// 인포페이지 타입
+// Type
 type InfoPageProps = {
   data: {
     site: {
@@ -34,7 +34,7 @@ type InfoPageProps = {
   }
 }
 
-// 타이틀, 내용, 작성자
+// Code
 const InfoPage: FunctionComponent<InfoPageProps> = function ({
   data: {
     site: {
