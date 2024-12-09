@@ -9,7 +9,8 @@ const POST_ITEM_DATA = {
   categories: ['Web', 'Frontend', 'Testing'],
   summary:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repellat doloremque fugit quis rem temporibus! Maxime molestias, suntrem debitis odit harum impedit. Modi cupiditate harum dignissimos eos in corrupti!',
-  thumbnail: '',
+  thumbnail:
+    'https://github.com/2Zerozero/2zerozero.blog/blob/master/static/thumbnail/Javascript_Thumbnail.png?raw=true',
   link: 'https://www.google.co.kr/',
 }
 
