@@ -34,6 +34,8 @@ const PostList: FunctionComponent = function () {
     <PostListWrapper>
       <PostItem {...POST_ITEM_DATA} />
       <PostItem {...POST_ITEM_DATA} />
+      <PostItem {...POST_ITEM_DATA} />
+      <PostItem {...POST_ITEM_DATA} />
     </PostListWrapper>
   )
 }
