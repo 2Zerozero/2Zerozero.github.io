@@ -7,8 +7,12 @@ const FooterWrapper = styled.div`
   padding: 50px 0;
   justify-content: center;
   text-align: center;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 `
 
 // Code

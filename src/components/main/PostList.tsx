@@ -26,6 +26,12 @@ const PostListWrapper = styled.div`
   & > * {
     flex: 1 1 calc(50% - 20px); /* 두 개의 열로 나누기 */
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    padding: 50px 20px;
+  }
 `
 
 // Component
