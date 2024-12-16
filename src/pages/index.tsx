@@ -4,12 +4,22 @@ import GlobalStyle from 'components/common/GlobalStyle'
 import Introduction from 'components/main/Introduction'
 import Footer from 'components/common/Footer'
 import CategoryList from 'components/main/CategoryList'
-import PostList from 'components/main/PostList'
+import PostList, { PostType } from 'components/main/PostList'
+import { graphql } from 'gatsby'
 
 const CATEGORY_LIST = {
   All: 5,
   Web: 3,
   Mobile: 2,
+}
+
+// Type
+type IndexPageProps = {
+  data: {
+    allMarkdownRemark: {
+      edges: PostType[]
+    }
+  }
 }
 
 // CSS
@@ -19,13 +29,17 @@ const Container = styled.div`
   height: 100%;
 `
 
-const IndexPage: FunctionComponent = function () {
+const IndexPage: FunctionComponent<IndexPageProps> = function ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) {
   return (
     <Container>
       <GlobalStyle />
       <Introduction />
       <CategoryList selectedCategory="Web" categoryList={CATEGORY_LIST} />
-      <PostList />
+      <PostList posts={edges} />
       <Footer />
     </Container>
   )
@@ -44,3 +58,27 @@ export default IndexPage
 
   이를 통하여 Gatsby 는 더 높은 사용자 경험(UX)을 제공
 */
+
+// GraphQL
+export const getPostList = graphql`
+  query getPostList {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            summary
+            date(formatString: "YYYY.MM.DD.")
+            categories
+            thumbnail {
+              publicURL
+            }
+          }
+        }
+      }
+    }
+  }
+`
