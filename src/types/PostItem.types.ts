@@ -1,3 +1,5 @@
+import { IGatsbyImageData } from 'gatsby-plugin-image'
+
 // 게시글 타입 관리
 export type PostFrontmatterType = {
   title: string
@@ -5,7 +7,9 @@ export type PostFrontmatterType = {
   categories: string[]
   summary: string
   thumbnail: {
-    publicURL: string
+    childImageSharp: {
+      gatsbyImageData: IGatsbyImageData
+    }
   }
 }
 

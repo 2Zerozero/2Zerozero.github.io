@@ -1,8 +1,12 @@
-// 상단 소개
-
 import styled from '@emotion/styled'
 import { FunctionComponent } from 'react'
 import ProfileImage from './ProfileImage'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
+
+// Type
+type IntroductionProps = {
+  profileImage: IGatsbyImageData
+}
 
 // CSS
 const Background = styled.div`
@@ -47,11 +51,13 @@ const SubTitle = styled.div`
 `
 
 // Code
-const Introduction: FunctionComponent = function () {
+const Introduction: FunctionComponent<IntroductionProps> = function ({
+  profileImage,
+}) {
   return (
     <Background>
       <Wrapper>
-        <ProfileImage />
+        <ProfileImage profileImage={profileImage} />
 
         <div>
           <SubTitle>Nice to Meet You,</SubTitle>
