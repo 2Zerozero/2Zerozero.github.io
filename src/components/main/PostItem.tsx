@@ -1,18 +1,10 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { FunctionComponent } from 'react'
+import { PostFrontmatterType } from 'types/PostItem.types'
 
 // Type
-type PostItemProps = {
-  title: string
-  date: string
-  categories: string[]
-  summary: string
-  thumbnail: {
-    publicURL: string
-  }
-  link: string
-}
+type PostItemProps = PostFrontmatterType & { link: string }
 
 // CSS
 const PostItemWrapper = styled(Link)`

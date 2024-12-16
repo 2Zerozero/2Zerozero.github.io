@@ -4,8 +4,9 @@ import GlobalStyle from 'components/common/GlobalStyle'
 import Introduction from 'components/main/Introduction'
 import Footer from 'components/common/Footer'
 import CategoryList from 'components/main/CategoryList'
-import PostList, { PostType } from 'components/main/PostList'
+import PostList from 'components/main/PostList'
 import { graphql } from 'gatsby'
+import { PostListItemType } from 'types/PostItem.types'
 
 const CATEGORY_LIST = {
   All: 5,
@@ -17,7 +18,7 @@ const CATEGORY_LIST = {
 type IndexPageProps = {
   data: {
     allMarkdownRemark: {
-      edges: PostType[]
+      edges: PostListItemType[]
     }
   }
 }
