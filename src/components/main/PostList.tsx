@@ -2,6 +2,9 @@ import styled from '@emotion/styled'
 import { FunctionComponent, useMemo } from 'react'
 import PostItem from './PostItem'
 import { PostListItemType } from 'types/PostItem.types'
+import useInfiniteScroll, {
+  useInfiniteScrollType,
+} from 'hooks/useInfiniteScroll'
 
 // Type
 type PostListProps = {
@@ -34,26 +37,14 @@ const PostList: FunctionComponent<PostListProps> = function ({
   selectedCategory,
   posts,
 }) {
-  // postListDate
-  // 만약 선택된 카테고리가 존재하면서 All이 아닌 경우에는 해당 카테고리 값을 가진 포스트 아이템만 필터링,
-  // 그렇지 않은 경우에는 모든 포스트 아이템을 보여주도록 구현
-  const postListData = useMemo(
-    () =>
-      posts.filter(
-        ({
-          node: {
-            frontmatter: { categories },
-          },
-        }: PostListItemType) =>
-          selectedCategory !== 'All'
-            ? categories.includes(selectedCategory)
-            : true,
-      ),
-    [selectedCategory],
+  const { containerRef, postList }: useInfiniteScrollType = useInfiniteScroll(
+    selectedCategory,
+    posts,
   )
+
   return (
-    <PostListWrapper>
-      {postListData.map(({ node: { id, frontmatter } }: PostListItemType) => (
+    <PostListWrapper ref={containerRef}>
+      {postList.map(({ node: { id, frontmatter } }: PostListItemType) => (
         <PostItem {...frontmatter} link="https://www.google.co.kr/" key={id} />
       ))}
     </PostListWrapper>
