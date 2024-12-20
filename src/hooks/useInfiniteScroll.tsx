@@ -65,3 +65,33 @@ const useInfiniteScroll = function (
 }
 
 export default useInfiniteScroll
+
+/*
+  useInfiniteScroll 훅의 상세 작동 방식
+
+  1. 상태 관리
+  - containerRef: 스크롤 컨테이너를 참조하는 ref 객체
+  - count: 현재 표시할 아이템의 페이지 수를 관리하는 state
+  
+  2. 카테고리별 포스트 필터링 (postListByCategory)
+  - useMemo를 사용하여 선택된 카테고리에 따라 포스트 목록을 필터링
+  - selectedCategory가 'All'인 경우 모든 포스트 반환
+  - 특정 카테고리가 선택된 경우 해당 카테고리의 포스트만 필터링
+  
+  3. Intersection Observer 설정
+  - 마지막 아이템이 화면에 보이는지 감지
+  - 마지막 아이템이 보이면 count를 1 증가시켜 추가 아이템 로드
+  - 관찰 완료 후 observer 연결 해제
+  
+  4. useEffect를 통한 상태 관리
+  - 카테고리 변경 시 count를 1로 초기화
+  - count 또는 selectedCategory 변경 시:
+    * 더 표시할 아이템이 없거나
+    * 컨테이너가 없거나
+    * 자식 요소가 없는 경우 함수 종료
+    * 그 외의 경우 마지막 요소에 observer 연결
+    
+  5. 반환값
+  - containerRef: 스크롤 컨테이너 참조
+  - postList: 현재 페이지까지의 필터링된 포스트 목록
+*/
