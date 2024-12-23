@@ -89,7 +89,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage(pageOptions)
   }
 
-  // 게시물 페이지 생성 및 쿼리에 대한 슬러그 전달
+  // 게시물 페이지 생성 및 쿼리에 대한 Slug 전달
   queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(generatePostPage)
 }
 

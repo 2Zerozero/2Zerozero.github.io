@@ -1,3 +1,4 @@
+import Template from 'components/common/Template'
 import { FunctionComponent } from 'react'
 
 // Type
@@ -7,7 +8,7 @@ type PostTemplateProps = {}
 const PostTemplate: FunctionComponent<PostTemplateProps> = props => {
   console.log(props)
 
-  return <div>Post Template</div>
+  return <Template>Post Template</Template>
 }
 
 export default PostTemplate
