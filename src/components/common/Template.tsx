@@ -16,7 +16,7 @@ const Container = styled.div`
 `
 
 // Component
-const Template: FunctionComponent<TemplateProps> = ({ children }) => {
+const Template: FunctionComponent<TemplateProps> = function ({ children }) {
   return (
     <Container>
       <GlobalStyle />

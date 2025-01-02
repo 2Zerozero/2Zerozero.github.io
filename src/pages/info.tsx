@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { graphql, Link } from 'gatsby'
 import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
-import ProfileImage from 'components/main/ProfileImage'
+import ProfileImage from 'components/Main/ProfileImage'
 
 // CSS
 const globalStyle = css`

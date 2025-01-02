@@ -6,7 +6,7 @@ import React, { FunctionComponent } from 'react'
 type GatsbyImgProps = {
   image: IGatsbyImageData
   alt: string
-  classname?: string
+  className?: string
 }
 
 type PostHeadProps = {
