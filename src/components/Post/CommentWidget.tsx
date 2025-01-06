@@ -1,3 +1,4 @@
+import styled from '@emotion/styled'
 import React, { FunctionComponent, useEffect, useRef } from 'react'
 
 // Setting
@@ -14,6 +15,13 @@ type UtterancesAttributesType = {
   crossorigin: string
   async: string
 }
+
+// CSS
+const UtterancesWrapper = styled.div`
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+`
 
 // Component
 const CommentWidget: FunctionComponent = function () {
@@ -46,7 +54,7 @@ const CommentWidget: FunctionComponent = function () {
     element.current.appendChild(utterances)
   }, [])
 
-  return <div ref={element} />
+  return <UtterancesWrapper ref={element} />
 }
 
 export default CommentWidget

@@ -14,6 +14,7 @@ const MarkdownRenderer = styled.div`
   width: 768px;
   margin: 0 auto;
   padding: 100px 0;
+  word-break: break-all;
 
   // 마크다운 스타일
   line-height: 1.8;
@@ -103,6 +104,34 @@ const MarkdownRenderer = styled.div`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
+  }
+
+  // 마크다운 반응형 디자인
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 80px 20px;
+    line-height: 1.6;
+    font-size: 14px;
+
+    h1 {
+      font-size: 23px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    h3 {
+      font-size: 17px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    hr {
+      margin: 50px 0;
+    }
   }
 `
 
