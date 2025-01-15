@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://2zerozero.github.io/sitemap-index.xml
+Host: https://2zerozero.github.io
