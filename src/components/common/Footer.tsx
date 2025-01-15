@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import React, { FunctionComponent } from 'react'
 
 // CSS
-const FooterWrapper = styled.div`
+const FooterWrapper = styled.footer`
   display: flex;
   padding: 50px 0;
   justify-content: center;

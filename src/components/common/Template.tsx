@@ -14,7 +14,7 @@ type TemplateProps = {
 }
 
 // CSS
-const Container = styled.div`
+const Container = styled.main`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -32,6 +32,8 @@ const Template: FunctionComponent<TemplateProps> = function ({
     <Container>
       {/* SEO */}
       <Helmet>
+        <title>{title}</title>
+
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
@@ -49,6 +51,8 @@ const Template: FunctionComponent<TemplateProps> = function ({
         <meta name="twitter:image" content={image} />
         <meta name="twitter:site" content="2Zerozero" />
         <meta name="twitter:creator" content="2Zerozero" />
+
+        <html lang="ko" />
       </Helmet>
 
       <GlobalStyle />
