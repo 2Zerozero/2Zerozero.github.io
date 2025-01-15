@@ -22,6 +22,12 @@ module.exports = {
         allExtensions: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sitemap`,
     {
