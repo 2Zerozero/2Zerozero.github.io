@@ -1,5 +1,5 @@
 ---
-date: '2020-07-29'
+date: '2024-12-16'
 title: 'Gatsby Post Test'
 categories: ['Test', 'Blog']
 summary: '블로그 게시글 테스트를 진행해보자'
