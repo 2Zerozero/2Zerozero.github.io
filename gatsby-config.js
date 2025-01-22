@@ -9,7 +9,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `주니어 개발자의 성장기록`,
+    title: `2Zerozero`,
     description: `주니어 개발자로서 성장하는 과정을 기록하는 블로그입니다.`,
     author: `2Zerozero`,
     siteUrl: `https://2zerozero.github.io`,
