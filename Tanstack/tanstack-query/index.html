@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.14.0"/><meta data-react-helmet="true" name="description" content="Tanstack Query에 대하여 알아보자"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="Tanstack Query란?"/><meta data-react-helmet="true" property="og:description" content="Tanstack Query에 대하여 알아보자"/><meta data-react-helmet="true" property="og:image" content="/static/a1b6cc0a419e2783712bcb63dd70c4cd/tanstack-query.png"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:site_name" content="Tanstack Query란?"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="Tanstack Query란?"/><meta data-react-helmet="true" name="twitter:description" content="Tanstack Query에 대하여 알아보자"/><meta data-react-helmet="true" name="twitter:image" content="/static/a1b6cc0a419e2783712bcb63dd70c4cd/tanstack-query.png"/><meta data-react-helmet="true" name="twitter:site" content="2Zerozero"/><meta data-react-helmet="true" name="twitter:creator" content="2Zerozero"/><meta data-react-helmet="true" name="google-site-verification" content="zlu7Dg5YSEKd5IQ17WHVKxgmjdHy8ICbWK34ycE2NKE"/><meta data-react-helmet="true" name="naver-site-verification" content="aea1aea67ee9b2ce923601c2a7bfe5d317acc71e"/><style data-href="/styles.9e907bc32054b7771552.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><link rel="canonical" href="https://2zerozero.github.io/Tanstack/tanstack-query/" data-baseprotocol="https:" data-basehost="2zerozero.github.io"/><title data-react-helmet="true">Tanstack Query란?</title><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 13ku56z">.css-13ku56z{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;}</style><main class="css-13ku56z e1oj83b30"><style data-emotion="css-global 1ie5on4">@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');*{margin:0;padding:0;box-sizing:border-box;font-family:'Noto Sans',sans-serif;}html,body,#___gatsby{height:100%;}a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}</style><style data-emotion="css 16cz9yp">.css-16cz9yp{position:relative;width:100%;height:400px;}@media (max-width: 768px){.css-16cz9yp{height:300px;}}</style><div class="css-16cz9yp e1opi4mu1"><style data-emotion="css 1bjn9yo">.css-1bjn9yo{z-index:-1;width:100%;height:400px;object-fit:cover;-webkit-filter:brightness(0.25);filter:brightness(0.25);}@media (max-width: 768px){.css-1bjn9yo{height:300px;}}</style><div data-gatsby-image-wrapper="" style="position:absolute" class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-1bjn9yo e1opi4mu0"><div style="max-width:2000px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg%20height=&#x27;1000&#x27;%20width=&#x27;2000&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><img aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNklEQVR42mMQlFAnGzFQqplPXF1IUl1EUl1IQp1fHEQKS4IQkAEUB4oIgkVEwILCUiBBAbAgg7CEuqy0BpeYGpOIKpeYupikBreYOrOwOquwOreoOqeIupi0Oo+oOqugBpOABpuQBpugBq+ouqiMlpCkBoOAhHqDkXGtkVGWvn6Vmf4MR/1iC+1CK60kc40OD/VAE7VGb6VmX6VIG6XaAPl0d4V4J2knW6uEtCJJBT0GbnE1dxXdRiPjOlPDHCPdPFOdbDPtCa5a+TYaNc5qoSZqOU4qnYFKpV6KE6Jk4xwVemMljXQ0xBWMgI5nAHqMV0KdQ0wNiDjF1IAu5xRTZxNR5xRV5xABuRzoCy4gW1iDVUgD6AugHj4xNX4xVWiAgUIITEJCSAgSWqgIHoSQoKJSVJGtGQDgkVBVmtUXsgAAAABJRU5ErkJggg==" alt=""/><picture><source type="image/webp" data-srcset="/static/a1b6cc0a419e2783712bcb63dd70c4cd/7379c/tanstack-query.webp 500w,/static/a1b6cc0a419e2783712bcb63dd70c4cd/40e69/tanstack-query.webp 1000w,/static/a1b6cc0a419e2783712bcb63dd70c4cd/e1d0c/tanstack-query.webp 2000w" sizes="(min-width: 2000px) 2000px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 2000px) 2000px, 100vw" decoding="async" loading="lazy" data-src="/static/a1b6cc0a419e2783712bcb63dd70c4cd/fa781/tanstack-query.png" data-srcset="/static/a1b6cc0a419e2783712bcb63dd70c4cd/625f7/tanstack-query.png 500w,/static/a1b6cc0a419e2783712bcb63dd70c4cd/2b799/tanstack-query.png 1000w,/static/a1b6cc0a419e2783712bcb63dd70c4cd/fa781/tanstack-query.png 2000w" alt="thumbnail"/></picture><noscript><picture><source type="image/webp" srcSet="/static/a1b6cc0a419e2783712bcb63dd70c4cd/7379c/tanstack-query.webp 500w,/static/a1b6cc0a419e2783712bcb63dd70c4cd/40e69/tanstack-query.webp 1000w,/static/a1b6cc0a419e2783712bcb63dd70c4cd/e1d0c/tanstack-query.webp 2000w" sizes="(min-width: 2000px) 2000px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 2000px) 2000px, 100vw" decoding="async" loading="lazy" src="/static/a1b6cc0a419e2783712bcb63dd70c4cd/fa781/tanstack-query.png" srcSet="/static/a1b6cc0a419e2783712bcb63dd70c4cd/625f7/tanstack-query.png 500w,/static/a1b6cc0a419e2783712bcb63dd70c4cd/2b799/tanstack-query.png 1000w,/static/a1b6cc0a419e2783712bcb63dd70c4cd/fa781/tanstack-query.png 2000w" alt="thumbnail"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><style data-emotion="css m1156n">.css-m1156n{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;height:100%;margin:0 auto;padding:60px 0;color:#ffffff;}@media (max-width: 768px){.css-m1156n{width:100%;padding:40px 20px;}}</style><div class="css-m1156n e1st1jau3"><style data-emotion="css 1p6oh3w">.css-1p6oh3w{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#ffffff;color:#000000;font-size:22px;cursor:pointer;box-shadow:0 0 10px rgba(0, 0, 0, 0.3);}@media (max-width: 768px){.css-1p6oh3w{width:30px;height:30px;font-size:18px;}}</style><div class="css-1p6oh3w e1st1jau2"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></div><style data-emotion="css gn4qtp">.css-gn4qtp{display:-webkit-box;overflow:hidden;overflow-wrap:break-word;margin-top:auto;text-overflow:ellipsis;white-space:normal;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:45px;font-weight:800;}@media (max-width: 768px){.css-gn4qtp{font-size:30px;}}</style><div class="css-gn4qtp e1st1jau1">Tanstack Query란?</div><style data-emotion="css 3gcnt2">.css-3gcnt2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:10px;font-size:18px;font-weight:700;}@media (max-width: 768px){.css-3gcnt2{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;font-size:15px;font-weight:400;}}</style><div class="css-3gcnt2 e1st1jau0"><div>React / Tanstack Query</div><div>2025.01.22.</div></div></div></div><style data-emotion="css u2cszm">.css-u2cszm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;margin:0 auto;padding:100px 0;word-break:break-all;line-height:1.8;font-size:16px;font-weight:400;}.css-u2cszm p{padding:3px 0;}.css-u2cszm h1,.css-u2cszm h2,.css-u2cszm h3{font-weight:800;margin-bottom:30px;}.css-u2cszm *+h1,.css-u2cszm *+h2,.css-u2cszm *+h3{margin-top:30px;}.css-u2cszm hr+h1,.css-u2cszm hr+h2,.css-u2cszm hr+h3{margin-top:0;}.css-u2cszm h1{font-size:30px;}.css-u2cszm h2{font-size:25px;}.css-u2cszm h3{font-size:20px;}.css-u2cszm blockquote{margin:30px 0;padding:5px 15px;border-left:2px solid #000000;font-weight:800;}.css-u2cszm ol,.css-u2cszm ul{margin-left:20px;padding:30px 0;}.css-u2cszm hr{border:1px solid #000000;margin:100px 0;}.css-u2cszm a{color:#4263eb;-webkit-text-decoration:underline;text-decoration:underline;}.css-u2cszm pre[class*='language-']{margin:30px 0;padding:15px;font-size:15px;}.css-u2cszm pre[class*='language-']::-webkit-scrollbar-thumb{background:rgba(255, 255, 255, 0.5);border-radius:3px;}.css-u2cszm code[class*='language-'],.css-u2cszm pre[class*='language-']{tab-size:2;}@media (max-width: 768px){.css-u2cszm{width:100%;padding:80px 20px;line-height:1.6;font-size:14px;}.css-u2cszm h1{font-size:23px;}.css-u2cszm h2{font-size:20px;}.css-u2cszm h3{font-size:17px;}.css-u2cszm img{width:100%;}.css-u2cszm hr{margin:50px 0;}}</style><div class="css-u2cszm e1ijh0y10"><h1>Tanstack Query</h1>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 250px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/210c1b87b930ac1ba5095a16bcc2326b/86700/tanstack-logo.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE/ElEQVR42l1VC1CUVRQ+l0eKrwVTkIfIJElRajNqpo2s6TSUk70Q0jBfpKAMD8VxEUUtN3mpIAJqpCgoi4DKriYbuBQvGQQJiJaHsgINoBI442PT3f//v/4/IYU7c+49M/f7vnvOmXvPJRo+LP6bZTJbcQ6wHjtObf+GZ5fbQi/ObYGXebKHZ5fV+AkF4t56kpHtMM6IweRyudWg7+/gPr1jxZ5oRJeWC4c7/kJK799I7e1DYncfEtTnhdAN3nBxd74jYldJBLmcJC77X4xADIB0UrL32hU4Z6gRisz3eJ3pLqd70iuo+9ug7m+B5mGnUG3QcTe7K/im6z7CZm+RSdaJAFnsfSnSISdFERuCPnSZO7gmvuWfWlT2aXG8Pg564w0YzA1oeFaLttsqtLWp0N/sI6CczDHrrSAFMjL9NYFblkNABXe9OxVaQxxaB7IRpF2AJSdfRUpVEOq60/EUZXh8PwvGP+PxpEcJroAJKCQuyNtSFLXwHxKTzXCf0trXkwnucT4frl4IuUqG5WdcMf/YGHily/Dh+UlYfsUVxa1RgPEyTE2x4G7Fw6xfB6hf4e/9RJjhwPSi1gRJcH3MLl/g0QWuo+kQ1uW8jXfTRmNevBUWKUfBK8sOy7IdEVksR2b5Gpg7T4MzpIOr3AX+5h48a4wEbgdyyrAFUuqracxo6/y6SwqgPYM7pv0M71+whbfKAR+ftkeg7zhszp2JZWXTsFe3FHxjmmhJ4P44Cr4+EXxZNMzFEUDtfu5mZiBG2dhkk6fb5DvGku+B0nhhX9FiBKln4yvNdGz65R3E+Tqj5rg/cstWIaRoLvSFYUBFHLhSJYSyAxDKY8H/pgRKovlHV6Mw63XHWvJ6a6oJGjHsgkiUqPzQdC4A66pm45z2c/y8eQ6KdnoB2hg8zN0K48VtYs0iIRQoXphaAU4dKUC7G+/NcBygRR5OJpzdBiFrK3B2O4yZIdijmof7OSGojFgI1YZpQPZ28GfDIeFwRsRlDTc+M1yAKgLz3R36ydNpYofpaCiQEiYI0pq6FT3JQcCPO9GgWIJ0HxsYY4PBh/pDSBbrdVI8/IQokib6qeF4zgnjnyQFY7bL5Doaa2WRV6vYiKfHlNxAkljkg2JK+4OBmCg0h3yCjBWE1t1foCvgUwz4rQS3MhrCth3AgS3gEhSQOM+O/8BVbf8WoyxZtnRt1rqu3QSX4lrOJb8Yiy5psSPnMlqSInAt7TVk5xMu/2qNkuqxKLlqh6pED7TEBWO3iJFfKoTrhWI4F9VwU1cHYOhty8jOvpW+SwZLyOApXgXPvAgc1E1EXg2hVM9Q3y5G2Ulov8ug7yFo9bb4oDAUEpbFn+Zp3xGQ3STpYo8beoCrLGbNBUUlmpemeQvJBYSMawx5FQyaakLx74TrTYSGNgZDJ0NPN6G5mbDx/BKB7TpkZjPnwJLId0RzsDzkuHg6oi5amfZrGBdbYIGjhYRTJYScCjHtG4RronBlI6GumaGrl3F1BkuTx0duUsdJeFmLDbUwcT3iuZgh8AQJ0RoyH7jCzAevMD6lkIRTOhLyq4graiTzjXYy66pJ+NLPQqrbYWBQ4+UGK4U46PuNn0S35vsQVseQEHGGoNQwJGoZkjSif4qEr4MYpjhRm4j1GeRYjhQcGs+79vP2vsZ6NOXZT6N6Zw96MPVN9sDJndXbjGG54t43shdfwDCxfwGT7ScnQYh2QwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/210c1b87b930ac1ba5095a16bcc2326b/a59e9/tanstack-logo.webp 192w,
+/static/210c1b87b930ac1ba5095a16bcc2326b/23cfa/tanstack-logo.webp 250w"
+              sizes="(max-width: 250px) 100vw, 250px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/210c1b87b930ac1ba5095a16bcc2326b/3b721/tanstack-logo.png 192w,
+/static/210c1b87b930ac1ba5095a16bcc2326b/86700/tanstack-logo.png 250w"
+            sizes="(max-width: 250px) 100vw, 250px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/210c1b87b930ac1ba5095a16bcc2326b/86700/tanstack-logo.png"
+            alt="Tanstack Logo"
+            title="Tansteck Query Logo"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h2>개요</h2>
+<p>TanStack Query란 서버로부터 데이터를 받아오거나, 데이터 캐싱, 캐시 제어, 동기화, 업데이트 등 데이터를 쉽고 효율적으로 관리할 수 있는 라이브러리입니다.</p>
+<p>기존의 이름은 React Query였으나, V4 부터 React 외에도 Vue, Solid, Svelte 등 더욱 다양한 프레임워크를 지원하게 되면서 이름이 변경되었습니다.</p>
+<h3>TanStack Query의 대표적인 기능</h3>
+<ul>
+<li>데이터 가져오기 및 캐싱</li>
+<li>동일 요청의 중복 제거</li>
+<li>신선한 데이터 유지</li>
+<li>무한 스크롤, 페이지네이션 등의 성능 최적화</li>
+<li>네트워크 재연결 및 요청 실패 등의 자동 갱신화</li>
+</ul>
+<h2>데이터 캐싱</h2>
+<p>Tanstack Query는 데이터를 캐싱하여 데이터를 빠르게 가져올 수 있도록 도와줍니다.</p>
+<p>데이터를 가져오기 위해서는 항상 쿼리 키(<code class="language-text">queryKey</code>)를 전달해야 합니다.</p>
+<p>이 쿼리 키는 캐시된 데이터와 비교해 새로운 데이터를 받아올지, 캐시된 데이터를 사용할지 결정하는 역할을 합니다.</p>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> useQuery <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@tanstack/react-query'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">TodoList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span>
+    data<span class="token operator">:</span> todos<span class="token punctuation">,</span> <span class="token comment">// 데이터의 이름을 todos 로 명명</span>
+  <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useQuery</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    queryKey<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'todos'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 쿼리 키</span>
+    <span class="token function-variable function">queryFn</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'https://api.example.com/todos'</span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>response<span class="token punctuation">.</span>ok<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Network response was not ok'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>todos<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+  )
+}</span></code></pre></div>
+<p>다음 이미지는 쿼리 키와 일치하는 캐시된 데이터가 없을때, 있을때의 차이를 보여줍니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f637e4c1f96aa77d0ae71dda5cbda75b/6bde6/cache-miss.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 48.4375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABdklEQVR42nWRO0/DMBDH8834Eiws7EwgBmAGIQRFTBViIBJCgqEsDLAwtBIND4kBqVTQtIUmbeI8TNPEsfNyknItA6CGvyzrfL6f784nhEUKAlg/Cv+RMJ5RknDijXzfp5RRSsFIkmRcpFk4p0FOe6f6x0O72+92O71eD5IUw4HvcT59OAvHWTTOo5injt1WWpKOTMMwHMeByn8zcZwg09YMU2gZHh4OoTCC35hZY0TBit2qlYfVudfqVv3+2TLRtAVKCPmGgdzYP17eORLWbllHs0JKhtCmfu25ertrPV6ux8+LqHkud9TmSwMwhJCqqkCmKdcNa2X7cGmzLNzNL2BZdhlTFcX+HNm2rWlaX0NnJ2VJkkRRbDQaaZpOPiPPJ3uWGRYuiReru6KAb648jBPOYThRFEZRxBiDVvdKB5VKRZblwWAANQPPOU+nIj5976P6U7NgVFmWQZzrjoCBI9jgKf7tvjKR+lfggYRgwJxmbycB05gv7wgjqS0v2WAAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/f637e4c1f96aa77d0ae71dda5cbda75b/a59e9/cache-miss.webp 192w,
+/static/f637e4c1f96aa77d0ae71dda5cbda75b/0ca9f/cache-miss.webp 384w,
+/static/f637e4c1f96aa77d0ae71dda5cbda75b/dc9b9/cache-miss.webp 768w,
+/static/f637e4c1f96aa77d0ae71dda5cbda75b/e2c2f/cache-miss.webp 1152w,
+/static/f637e4c1f96aa77d0ae71dda5cbda75b/f3efb/cache-miss.webp 1536w,
+/static/f637e4c1f96aa77d0ae71dda5cbda75b/37e2a/cache-miss.webp 2100w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/f637e4c1f96aa77d0ae71dda5cbda75b/3b721/cache-miss.png 192w,
+/static/f637e4c1f96aa77d0ae71dda5cbda75b/66595/cache-miss.png 384w,
+/static/f637e4c1f96aa77d0ae71dda5cbda75b/fe486/cache-miss.png 768w,
+/static/f637e4c1f96aa77d0ae71dda5cbda75b/d2d74/cache-miss.png 1152w,
+/static/f637e4c1f96aa77d0ae71dda5cbda75b/e8464/cache-miss.png 1536w,
+/static/f637e4c1f96aa77d0ae71dda5cbda75b/6bde6/cache-miss.png 2100w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/f637e4c1f96aa77d0ae71dda5cbda75b/fe486/cache-miss.png"
+            alt="캐시 데이터가 없을때"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/86a932eaaf263207444e26630e4c2236/6bde6/cache-hit.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 48.4375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABdUlEQVR42nWRy0rDQBSG83A+ghsfwVXBhe4FEUVcibjoxo0L3XlZqCD1grVWa4stvcQ2tzFpM7lN7jPTJE6KINr4MQPDnP8/w5yfi4oIQ7Z+iP6By+YghLrI9jzP9wPf99mBEJIVMW9Ogyj1RoeAr/R5iecHgiCwR4rNoYconTVOoiyJsxTHZOpaH4auQMM0zXz/MWNM1LEOtDHX0xCrE0xc2A3GlQBJeqfXfWs3mi1BBJKsAE1lgjDIQQgRjLUJXNsplzYPuNW7gAeT0HcNy/XUC8dSwUhuN5vVp9rt9XG39dKtNz5F0bItBgAAOQ4zlzb2l9f3uIfFJTjoW54rS5Ju2BBCBYChoFQrp8rlwvPZbuemJvf6hmVCXdchZF8Y68Z2+WRlq8zBq3MEIaGUBRTHEcbYsW1V1d5br++PR8Kwo5mmjRwc5zAnG5Dr+0NZva+3C6JK05RSignB0yxJEkowuymetizmSL8RvxmxnOaruWCm+QLnLSUt6mv46QAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/86a932eaaf263207444e26630e4c2236/a59e9/cache-hit.webp 192w,
+/static/86a932eaaf263207444e26630e4c2236/0ca9f/cache-hit.webp 384w,
+/static/86a932eaaf263207444e26630e4c2236/dc9b9/cache-hit.webp 768w,
+/static/86a932eaaf263207444e26630e4c2236/e2c2f/cache-hit.webp 1152w,
+/static/86a932eaaf263207444e26630e4c2236/f3efb/cache-hit.webp 1536w,
+/static/86a932eaaf263207444e26630e4c2236/37e2a/cache-hit.webp 2100w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/86a932eaaf263207444e26630e4c2236/3b721/cache-hit.png 192w,
+/static/86a932eaaf263207444e26630e4c2236/66595/cache-hit.png 384w,
+/static/86a932eaaf263207444e26630e4c2236/fe486/cache-hit.png 768w,
+/static/86a932eaaf263207444e26630e4c2236/d2d74/cache-hit.png 1152w,
+/static/86a932eaaf263207444e26630e4c2236/e8464/cache-hit.png 1536w,
+/static/86a932eaaf263207444e26630e4c2236/6bde6/cache-hit.png 2100w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/86a932eaaf263207444e26630e4c2236/fe486/cache-hit.png"
+            alt="캐시 데이터가 있을때"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>캐시가 없을 땐, 서버에서 데이터를 가져오면 그 데이터는 캐시화 되어 다음 요청부터는 캐시된 데이터로 사용됩니다.</p>
+<p>캐시가 있을 땐, 서버에서 데이터를 가져오지 않고 캐시된 데이터를 사용합니다.</p>
+<h2>데이터의 신선도</h2>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> useQuery <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@tanstack/react-query'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">TodoList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span>
+    data<span class="token operator">:</span> todos<span class="token punctuation">,</span> <span class="token comment">// 데이터의 이름을 todos 로 명명</span>
+    isStale<span class="token punctuation">,</span> <span class="token comment">// 데이터가 신선한지 여부</span>
+  <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useQuery</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    queryKey<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'todos'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 쿼리 키</span>
+    <span class="token function-variable function">queryFn</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'https://api.example.com/todos'</span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>response<span class="token punctuation">.</span>ok<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Network response was not ok'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    staleTime<span class="token operator">:</span> <span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token comment">// 1분 동안 데이터를 "신선"하다고 간주</span>
+    gcTime<span class="token operator">:</span> <span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token comment">// 5분 동안 캐시 유지</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>todos<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">데이터가 신선한가요? </span><span class="token punctuation">{</span>isStale <span class="token operator">?</span> <span class="token string">'아니요'</span> <span class="token operator">:</span> <span class="token string">'예'</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+  )
+}</span></code></pre></div>
+<h2>알아두는 용어정리</h2>
+<details>
+<summary><strong>데이터 캐싱이란?</strong></summary>
+<p>데이터 캐싱은 자주 사용되는 데이터를 메모리나 저장소에 임시로 저장해두고 재사용하는 기술입니다.</p>
+<h4>주요 목적</h4>
+<ol>
+<li><strong>성능 최적화</strong>: 서버 요청 없이 저장된 데이터를 즉시 사용</li>
+<li><strong>네트워크 부하 감소</strong>: 중복 요청을 방지하여 서버 부하와 네트워크 트래픽 감소</li>
+<li><strong>사용자 경험 향상</strong>: 데이터를 더 빠르게 제공하여 앱의 응답성 개선</li>
+</ol>
+<h4>실제 예시</h4>
+<ul>
+<li>게시글 목록을 한 번 불러온 후 캐싱하여, 다른 페이지 갔다가 돌아올 때 즉시 표시</li>
+<li>사용자 프로필 정보를 캐싱하여 여러 컴포넌트에서 재사용</li>
+<li>API 응답 데이터를 캐싱하여 동일한 요청에 대해 서버 호출 최소화</li>
+</ul>
+<h4>고려사항</h4>
+<ul>
+<li>캐시된 데이터의 유효 기간 (staleTime) 설정</li>
+<li>캐시 데이터의 최신성 관리</li>
+<li>메모리 사용량 관리 (캐시 크기 제한)</li>
+</ul>
+</details>
+<h2>레퍼런스</h2>
+<p><a href="https://tanstack.com/query/latest" target="_blank" rel="nofollow">공식문서</a></p>
+<p><a href="https://www.heropy.dev/p/HZaKIE" target="_blank" rel="nofollow">참고 블로그</a></p></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 3j0ao9">.css-3j0ao9{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:50px 0;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;text-align:center;font-size:15px;line-height:1.5;}@media (max-width: 768px){.css-3j0ao9{font-size:13px;}}</style><footer class="css-3j0ao9 evi8j960">Thank You for Visiting My Blog, Have a Good Day 😆 <br/>2024 Developer 2Zerozero, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Tanstack/tanstack-query/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-abb0d210b9caca4990e0.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-24e3344cf49b7189de7c.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-48dd52e7f801db123542.js\"],\"component---src-pages-info-tsx\":[\"/component---src-pages-info-tsx-e7fddfef8a46f5c43c5a.js\"],\"component---src-templates-post-template-tsx\":[\"/component---src-templates-post-template-tsx-e4b235ae7c41816929ff.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="0f3b4e0187c76846a388";</script><script src="/webpack-runtime-fcd19e0bc08918397d51.js" async></script><script src="/framework-9d608f77b5c9a88afabd.js" async></script><script src="/app-abb0d210b9caca4990e0.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
